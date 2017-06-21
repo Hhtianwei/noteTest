@@ -1,4 +1,4 @@
-package com.shsxt.yuanx;
+package com.shsxt.yuanx1;
 
 public class Animal {
 void sleep(){
