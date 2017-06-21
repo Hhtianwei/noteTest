@@ -2,7 +2,7 @@ package com.shsxt.yuanx;
 
 import java.util.Scanner;
 
-/*需求：从键盘上获取数字判定输出
+/*需求：从键盘上获取数字判定输出123
 1.从键盘上获取数字判定
 2.对应输出*/
 public class Test1 {
