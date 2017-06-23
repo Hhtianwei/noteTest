@@ -23,3 +23,7 @@ git push origin XXXX
 git fetch origin XXXX
 git reset --hard FETCH_HEAD
 第一步，拉取到代码，但是还没有应用上去，第二步，把新代码应用上去。本地做的修改（没有提交的修改都会被还原），所以在拉新代码之前，要把数据都提交了。
+
+删除一个本地的分支
+1.切换到其它分支
+2.执行  git branch -D xxxx要删除的分支名
