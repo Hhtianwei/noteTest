@@ -54,9 +54,5 @@ break是结束整个循环体，continue是结束单次循环
       终止本次循环的执行，即跳过当前这次循环中continue语句后尚未执行的语句，接着进行下一次循环条件的判断。
 	  continue语句只用在for、while、do-while等循环体中,常与if条件语句一起使用,用来加速循环。
 
- 
- git命令
-git add filename
-git commit -m ""
-git push origin 
-git status
+如果父类没有空构造，那么子类每个构造器都必须直接或间接调用父类的有参构造器，否则会编译出错
+
