@@ -1,0 +1,114 @@
+类Date 存在于 java.util包下
+Date： 用来存储时间
+构造方式：   不带参的构造方法， 表示里面存储当前时间点； 也可以给定一个long数据， 存储的是1970-1-1 0:0:0:0   过后long时间的时间点
+SimpleDateFormat  和日期相关， 是日期的工具类， 用来将日期和字符串之间进行转换
+创建一个指定格式的工具对象
+DateFormat df =  new SimpleDateFormat();     yyyy/MM/dd H:m:s");
+										年月日时分秒
+String str1 = new String("acb");
+		String str2 = new String("acb");
+		System.out.println(str1.equals(str2));true
+StringBuilder sb1 = new StringBuilder("abc");
+		StringBuilder sb2 = new StringBuilder("abc");
+		System.out.println(sb1.equals(sb2));false
+增强for循环  for(类型 局部变量  数组名)
+工具包  java.util
+容器  Collection   容器的父接口
+大小可以根据内容的多少而改变
+Set  无序  不可重复      Set元素存储的顺序和我们添加元素的顺序不一致， 也不由我们控制， 所以我们说它是无序的
+		// 注意： 无序只是针对存放顺序， 容器自己内容部有自己的排序规则
+List  有序  可重复   ArrayList    LinkedList
+Map  <k  v>键和  值  
+容器的特点：
+ * 	1、能够存储多个数据
+ * 	2、存储数据的类型可以不同（不使用）
+ * 	3、大小可以随着内容的多少而改变
+ * 	4、只能存储引用类型（和数组进行区分）
+ * 
+ * List: 存储的是单个单个的对象，有序可重复
+ * Set: 存储的是单个单个的对象，无序不可重复
+ * Map: 存储的是键值对，键无序，不可重复（键， 值无所谓）
+ * 泛型  <数据类型>制定可以使用的数据类型
+ * 
+ * 容器的使用：
+ * 	1、创建一个容器对象
+ * ====   容器的操作    ====
+ * 	2、存储数据              容器的遍历（使用）：
+ * 	3、查看数据					Set:无序不可重复
+ * 	4、获取数据				    创建
+ *	5、删除数据                  添加数据	
+ *	6、清空容器					查看大小
+ * 7、查看容器的大小				获取数据（遍历）
+删除数据
+容器的遍历  Collection         Iterator:迭代器
+// Collection获取不到具体的某一个元素， 可以通过遍历的方式获取
+		// 1、增强for循环
+		for(String temp : names){
+			System.out.println(temp);
+		}
+		// 想用普通for循环   具体的某元素， 用不了 普通for循环
+		
+// 迭代器 来遍历容器
+		// 1、获取当前容器相关的迭代器对象
+		Iterator<String> it = names.iterator();
+		// 2、判断是否有下一个元素
+		while(it.hasNext()){
+			// 3、 将迭代器指向下一个元素， 获取当前元素
+			String str = it.next();
+			System.out.println(str);
+}
+引用类型的equals方法的重写
+ 容器的 contains方法回去调用  元素的 equals来进行比较 true , false
+容器的 remove方法，是通过equals方法查找元素的， 只要找到返回 true的元素，就能将该元素删除
+
+
+Java中的数据类型分为基本数据类型和复合数据类型(类)
+基本数据类型,也称原始数据类型  Java没有任何无符号形式的整型类型
+			      				字节数	   范围
+byte      			1			-128~127
+short				2		-32768~32767
+int					4		    超过20亿
+long				8
+		char				2	
+float				4		
+double				8
+boolean	     true  falae
+比较时用(==)比较的是他们的值  =是赋值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+修饰符
+static
+final
+abstract
+权限控制符
+访问级别      访问控制修饰符      同类       同包     子类(不同包)     不同的包  公开级别：     public            y      y           y          y                 受保护          protected           y          y           y
+默认           default没有访问控制符  y        y
+私有            private              y
+成员变量、成员方法和构造方法可以处于4个访问级别中的一个；
+类的访问控制符有两种：public, default(默认的，什么都不用写)  default就是包内访问控制符来
+
+
+子类继承父类，如果调用时，使用过的是父类的引用个指向子类的实例对象，此时体现的是java的多态，只要的是用来调用方法，没有体现继承关系
+如果想要体现继承关系，需要直接构建子类的应用指向子类的实例对象，此时体现的java的继承关系
+eg.Student extends Person
+person p = new Student(此时体现多态，调用方法)
+Student s = new Student(此时体现继承，可以调用父类变量)
