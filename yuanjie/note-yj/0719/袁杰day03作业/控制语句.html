@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、选择
+			var v = 8;
+			if(v<6){
+				console.log(v+"是<6的");
+			}else if(v<7){
+				console.log(v+'是<7的');
+			}else{
+				console.log(v+'是>7的');
+			}
+			//2、循环
+			var m = 5;
+			var n = 0;
+			while(n<m){
+				n++;
+			}
+			console.log('n的值是：'+n);
+			
+			console.log('=====打印乘法表=====');
+			for(var i = 1;i<=9;i++){
+				for(var j = 1;j<=i;j++){
+					document.write(j+'*'+i+'='+i*j+"&nbsp;");
+				}
+				document.write("<br />");
+			}
+		</script>
+	</body>
+</html>

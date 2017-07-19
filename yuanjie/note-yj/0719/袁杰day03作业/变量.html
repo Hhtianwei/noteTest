@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、变量的声明
+			//（1）声明的同时赋值
+			var a = 10;
+			//（2）先声明再赋值
+			var b;
+			b = 20;
+			
+			//2、变量声明注意事项
+			//1）若只声明而没有赋值，则该变量的值为 undefined
+			var c;
+			//2）JavaScript 允许省略 var，直接对未声明的变量赋值
+			d = 30;//全局变量，不管是放在方法外还是方法内
+			console.log("d="+d);
+			//3）若变量未声明就使用，JavaScript 会报错，告诉你变量未定义
+			//4）可以在同一条 var 命令中声明多个变量
+			var x,y,z;
+			//5）若使用 var 重新声明一个已经存在的变量，是无效的
+			var a;
+			console.log("a="+a);
+			//6）若使用 var 重新声明一个已经存在的变量且赋值，则会覆盖掉前面的值
+			var d = 40;
+			console.log("d="+d);
+			//7）JavaScript 是一种动态类型、弱类型语言，也就是说，变量的类型没有
+			//限制，可以赋予各种类型的值
+			var str = "hello";
+			str = 25;
+		</script>
+	</body>
+</html>

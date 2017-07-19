@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log('------声明函数-------');
+			//1.声明函数
+			//1)function
+			function test(){
+				
+			}
+			//2)函数表达式
+			var test1=function(){
+				
+			}
+			
+			//2.函数的参数、调用和return语句
+			//1)参数
+			console.log('------实参可以省略，那么对应形参为 undefined-------');
+			//实参可以省略，那么对应形参为 undefined
+			function test2(a){
+				console.log(a)
+			}
+			test2();//undefined
+			console.log('------若函数形参同名：在使用时以最后一个值为准-------');
+			//若函数形参同名（一般不会这么干）：在使用时以最后一个值为准。
+			function test3(a,a){
+				console.log(a);
+			}
+			test3(2,3);
+			console.log('------值传递：传递副本-------');
+			//值传递：传递副本
+			var v = 10;
+			function test4(a){
+				a = 20;
+			}
+			test4(v);
+			console.log(v);
+			console.log('------引用传递：传递地址，操作的是同一个对象-------');
+			//引用传递：传递地址，操作的是同一个对象。
+			var obj = {age:18};
+			function test5(o){
+				o.age = 20;
+			}
+			test5(obj);
+			console.log(obj.age);
+			console.log('------arguments 对象: 获取所有的参数-------');
+			//arguments 对象: 获取所有的参数。
+			function test6(a){
+				for(var i in arguments){
+					console.log(arguments[i]);
+				}
+			}
+			test6(1,2,3);
+			console.log('------函数的属性和方法-------');
+			//函数的属性和方法。
+			function test7(){
+				
+			}
+			console.log(test7.name);
+			console.log(test6.length);
+			console.log(test7.toString());
+			console.log('------return 语句-------');
+			//return 语句
+			function test8(a,b){
+				return a+b;
+			}
+			console.log(test8(1,3));
+		</script>
+	</body>
+</html>
