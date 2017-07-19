@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//变量的声明及赋值
+			var x;
+			x = 10;
+			console.log(x);
+			var y = 10;
+			console.log(y);
+/*数据类型 五种简单的数据类型: Undefined Null boolean number String
+复杂数据类型: Object  对象object   数组array   函数function*/
+			var a;
+			alert(typeof a);//undefined
+			var a=true;
+			alert(typeof a);//boolean
+			var a="你好";
+			alert(typeof a);//String
+			var a=380;
+			alert(typeof a);//number
+			var a={};
+			alert(typeof a);//object
+			var a=null;
+			alert(typeof a);//object
+			var a=new Object;
+			alert(typeof a);//object
+			function f (){}
+			alert(typeof f);
+/*undefined派生自null,所以等值比较返回值是true.
+所以,未初始化的变量和赋值为null的变量相等*/
+			alert(undefined==null);
+			var box=null;
+			var b;
+			alert(b==box);
+			
+		</script>
+	</body>
+</html>
