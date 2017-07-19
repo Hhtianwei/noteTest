@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//将其他类型值转换为对应的布尔类型值（ 两种方式）：
+			//1） 显式转换（ 强制转换）： Boolean() 方法。
+			console.log("非 0 --> " + Boolean(2)); //true 
+			console.log("0 --> " + Boolean(0)); //false console.log("非空字符串-->" + Boolean("hello"));//true
+			console.log("空字符串-->" + Boolean("")); //false 
+			//2） 隐式转换， 如： 在
+			//if 语句中的判断， 就存在隐式转换
+			var hello = "你好";
+			if(hello) { //true
+				console.log("若条件为 true，则执行 if 的语句体;");
+			} else {
+				console.log("若条件为 false，则执行 else 的语句体;");
+			}
+			console.log(1 === 1.0);
+			console.log(1 + 1.0);
+			var num = 8.0;
+			console.log(num);
+			//NaN 表示非数值 (Not a Number)
+			console.log(parseInt("abc")); //parseInt 方法将字符串解析为数值，但若无法解 析，返回 NaN
+			console.log("NaN 不等于任何值，包括它本身:" + (NaN === NaN));
+			console.log("NaN 与任何值运算都是:" + (NaN + 1));
+			//isNaN 方法可以用来判断一个值是否为 NaN true：不是数字；false：是数字 
+			console.log(isNaN(12)); //false
+			console.log(isNaN(("abc" + 1))); //true
+			//parseInt()、parseFloat()、Number() Number()函数是转型函数，可以用于任何数据类型。 
+			console.log(Number(true)); //1，布尔类型：true：1，false：0 
+			console.log(Number(25)); //,25,数值型直接返回 
+			console.log(Number(NaN)); //NaN，NaN、undefined 返回 NaN 
+			console.log(Number('456.6')); //456.6，数值的字符串返回数值 
+			console.log(Number(null)); //0，空对象 null 返回 0 
+			console.log(Number('')); //0，空串返回 0 
+			console.log(Number('abc124')); //NaN Number()
+			/*Number()函数在转字符串类型数据时较为复杂，因此可以使用另外 两个是专门将字符串转为数值的函数：
+			parseInt()、parseFloat()*/
+			console.log(parseInt('123')); //123
+			console.log(parseInt('456.5')); //456 
+			console.log(parseInt("789abc")); //789 
+			console.log(parseInt("abc789")); //NaN
+			console.log(parseFloat('123.4.5abc')); //123
+			//字符串	
+			//toString() 将值转为字符串。
+			var box = 12;
+			console.log(box.toString()); //字符串类型的 12
+			//对象:    对象是一组数据和功能的集合。
+			//{}：表示使用对象字面量方式定义的对象。空的大括号表示定义包 含默认属性和方法的对象。 
+			console.log(typeof window); // "object"
+			console.log(typeof {}); // "object"
+			console.log(typeof []); // "object" 
+			console.log(typeof null); // "object"
+	//instanceof运算符
+			var o = {}; 
+			var a = []; 
+			console.log(o instanceof Object);// true，Object 是对象构造
+			console.log(a instanceof Array ) ;// true，Array 是数组对象
+		</script>
+	</body>
+
+</html>
