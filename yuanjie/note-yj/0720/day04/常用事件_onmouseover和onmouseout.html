@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onmouseover和onmouseout</title>
+	</head>
+	<body>
+		<img src="img/m.jpg" id="img1"/>
+		<script type="text/javascript">
+			var img = document.getElementById("img1");
+			img.onmouseover = function(){
+				console.info("鼠标来了");
+			}
+			img.onmouseout = function(){
+				console.info("鼠标走了");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			（1）在函数中使用this
+			属于全局性调用，代表全局对象，通过window对象来访问。
+			
+			（2）在对象的方法中使用this
+			对象中的函数使用this，代表当前的上级对象。
+			
+		   			           构造函数中的this   构建的对象本身
+		   			
+		   	 this决策树      用对象.调用函数              对象
+		   	 
+    	 	                            直接调用函数                     全局的对象window
+		-->
+		<script type="text/javascript">
+			//（1）在函数中使用this
+			var a = 10;//这个a是定义在全局空间上的
+			function test1(){
+				console.info(this.a);//通过this访问
+			}
+			test1();
+			
+			function test2(){
+				window.a = 20;//这个a是定义在全局空间上的
+				console.info(this.a);//通过this访问
+			}
+			test2();
+			
+			//（2）在对象的方法中使用this
+			var person={
+				name:"zs",
+				sayHi:function(){
+					console.log("我是"+this.name);
+				}
+			};
+			person.sayHi();
+			
+			//定义了一个Person的构造函数
+			var Person=function(name){
+				this.name = name;
+				console.log(this.name);
+			};
+			var p1 = new Person("lisi");
+		</script>
+	</body>
+</html>
