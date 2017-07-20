@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>函数function</title>
+	</head>
+
+	<body>
+		<!--函数的地位是第一等公民，函数与其他数据类型完全是平等的。
+			（1）可以赋值给一个变量。
+			（2）可以作为参数和返回值-->
+		<script type="text/javascript">
+			function display() {
+				console.log("display");
+			}
+			display();
+
+			function display1() {
+				console.log(display1);
+			}
+			display1();
+			//函数的定义
+			function add(x, y) {
+				return x + y;
+			}
+			//将函数赋值给一个变量
+			var operator = add; //变量现在就是个函数
+			var sum = operator("c", 34);
+			console.log(sum);
+			//将函数作为参数和返回值
+			function a(op) {
+				return op;
+			}
+			a(operator)(1, 1)//不常用
+			console.log(a);
+		
+		</script>
+	</body>
+
+</html>

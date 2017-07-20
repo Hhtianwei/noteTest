@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*（1）对象中以 键:值 对形式存放数据，多个键值对用逗号隔开，但是最后没有逗号。
+				（2）对象的所有键名都是字符串，所以加不加引号都可以
+					（3）对象中可以存放任意类型的数据，如：方法、对象、数组、布尔等。
+					（4）对象中的属性可以随意添加
+					（5）操作属性可以使用点（.）、中括号（[]），使用[]操作属性，属性名要放在引号中，如：obj[“name”]。
+					（6）一个对象有多个引用时，其中一个对其发生变化，另外也可见。*/
+
+			
+			//对象中以 键:值 对形式存放数据，多个键值对用逗号隔开，但是最后没有逗号。
+			var obj = {
+				//所有键名都是字符串，所以加不加引号都可以
+				"name": "huge",
+				age: 34,
+				sayHi: function() {
+					console.log("大家好,我是胡歌");
+				}
+				//对象中可以存放任意类型的数据，如：方法、对象、数组、布尔等。
+//				courses : {
+//				javase : 4,
+//				javascript : 3
+//				},
+//				isLike : true,
+//				members : [
+//					{name : "小红",age : 20},
+//					{name : "小绿",age : 22},
+//					{name : "小蓝",age : 27},
+//					{name : "小黄"} 
+//				]
+			};
+			console.log(obj);
+			console.log(obj.name+"======"+obj.age);
+			console.log(obj["name"]+"======"+obj['age']);//json
+			//（6）一个对象有多个引用时，其中一个对其发生变化，另外也可见
+			var mid=obj;
+			obj.name="lisi";
+			console.log("obj=====>"+obj.name);
+			console.log("mid=====>"+mid.name);
+		
+
+		</script>
+	</body>
+
+</html>
