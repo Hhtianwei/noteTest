@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*创建对象的三种基本形式。
+						（1）通过字面量形式创建对象
+						var 对象名 = {};//创建一个空的对象
+						var 对象名 = {键:值,键2:值2,...};
+						（2）通过new Object对象创建对象
+						    var 对象名 = new Object();//创建一个空的对象
+						（3）通过Object对象的create方法创建对象
+						var 对象名 = Object.create(null);*/
+			var obj = {};
+			var obj1 = {
+				name: "小花",
+				age: 18
+			};
+			console.log(obj);
+			console.log(obj1);
+			var obj3 = new Object();
+			obj3.name = "小明";
+			obj3.fun = function() {
+				console.log("我是小明");
+			};
+			console.log(obj3);
+			obj3.fun();
+			/*（3）通过Object对象的create方法创建对象
+			var 对象名 = Object.create(null);*/
+			var obj4 = Object.create({
+				name: "小刘"
+			});
+			console.log(obj4);
+			obj4.name = "小张";
+			console.log(obj4);
+			//4)构造函数的方式创建对象(很少用)
+			//定义了一个Person的构造函数
+			var Person = function(name) {
+				this.name = name;
+			};
+			//创建对象
+			var p1 = new Person("zhangergou");
+			console.log(p1);
+		</script>
+	</body>
+
+</html>

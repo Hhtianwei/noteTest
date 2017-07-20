@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*函数作用域：全局(global variable)和局部(local variable) 
+									（1）全局变量与局部变量同名问题*/
+			var box = 1; //全局变量
+			function display(box) {
+				var box=3;//此处 box 与全局变量 box 没有关系，这里的 box 为传递的参数，相当于新 声明的局部变量 
+				var b = 2;
+				console.log("box-->" + box);
+			}
+			display();
+			//console.log("b-->" + b); //不可以输出
+
+			/*(2) 在函数中定义变量时， 若没有加
+			var 关键字， 使用之后自动变为全局变量*/
+			function fun() {
+				a = 100;
+			}
+			fun();
+			console.log(a);
+
+			//(3) 当变量同名时， 遵循的原则： 就近原则
+			var v = 1;
+
+			function f() {
+				var v = 2;
+				console.log(v);
+			}
+			f() ;// 2 
+			console.log(v); // 1
+			/*匿名函数立即调用（ 1） 匿名函数：
+			function([参数]) {}（
+			2） 调用：(function([形参]) {})([实参]);*/
+			var fun=function(){
+				console.log();
+			}
+		</script>
+	</body>
+
+</html>
