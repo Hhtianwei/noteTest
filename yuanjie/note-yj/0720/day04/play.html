@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="input1" value="button1" />
+		<input type="button" id="input2" value="九儿" />
+		<!--<input type="image" name="image" id="image" src="img/m.jpg" />-->
+		<script type="text/javascript">
+			var input1 = document.getElementById("input1");
+			input1.onclick = function(){
+				input1.onmouseout = function(){
+					input1.style.color = "red";
+				}
+			}
+			var input2 = document.getElementById("input2");
+			input2.onclick = function(){
+//				document.getElementById("image");
+				document.write('<input type="image" src="img/m.jpg" align="absmiddle"/>');
+			}
+		</script>
+	</body>
+</html>

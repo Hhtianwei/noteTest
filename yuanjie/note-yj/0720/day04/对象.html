@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建对象的三种基本形式
+			//1.通过字面量形式创建对象
+			var obj = {};//创建一个空的对象
+			var obj1 = {
+				name:"zs",
+				age:15
+			};
+			console.info(obj);
+			console.info(obj1);
+			
+			//2.通过new Object对象创建对象
+			var obj2 = new Object();
+			obj2.name = "lisi";
+			obj2.ls = function(){
+				console.info("我是李四");
+			};
+			console.info(obj2);
+			
+			//3.通过Object对象的create方法创建对象
+			var obj3 = Object.create({name:"ww"});
+			console.info(obj3);
+			
+			//关于对象
+//			（1）对象中以 键:值 对形式存放数据，多个键值对用逗号隔开，但是最后没有逗号。
+//			（2）对象的所有键名都是字符串，所以加不加引号都可以
+//			（3）对象中可以存放任意类型的数据，如：方法、对象、数组、布尔等。
+//			（4）对象中的属性可以随意添加
+//			（5）操作属性可以使用点（.）、中括号（[]），使用[]操作属性，属性名要放在引号中，如：obj[“name”]。
+//			（6）一个对象有多个引用时，其中一个对其发生变化，另外也可见
+			var obj4 = {
+				"name":"zhaosi",
+				age:40,//对象的所有键名都是字符串，所以加不加引号都可以
+				//方法
+				sayHello:function(){
+					console.info("我是对象中的方法");
+				},
+				//对象
+				courses:{
+					javase:20,
+					javascript:3
+				},
+				//数组
+				members : [
+					{name : "小红",age : 20},
+					{name : "小绿",age : 22},
+					{name : "小蓝",age : 27},
+					{name : "小黄"}
+					],
+				//布尔
+				isLike:true
+			};
+			//（6）一个对象有多个引用时，其中一个对其发生变化，另外也可见
+			var mid = obj;
+			obj.name="lisi";
+			console.info("obj.name="+obj.name);
+			console.info("mid.name="+mid.name);
+			
+		</script>
+	</body>
+</html>

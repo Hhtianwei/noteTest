@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件</title>
+	</head>
+	<body>
+		<!--1、行内事件-->
+		<input type="button" value="你点不开" ondblclick="alert('双击666')"/>
+		<!--2、DOM0 级事件处理-->
+		<input type="button" id="input1" value="单击" />
+		<input type="button" id="input2" value="双击" />
+		<script type="text/javascript">
+			//2、DOM0 级事件处理
+			var input1 = document.getElementById("input1");
+			input1.onclick=function(){
+				alert("你是不是撒");
+			}
+			//3、DOM2 级事件处理
+			var input2 = document.getElementById("input2");
+			input2.addEventListener("dblclick",test);
+			function test(){
+				alert("嘻哈");
+				input2.removeEventListener("dblclick",test);
+			}
+		</script>
+	</body>
+</html>
