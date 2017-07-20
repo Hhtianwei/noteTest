@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.字符串
+			console.log("=======字符串==========");
+			var str = "abcdefg";
+			console.info("索引3的位置的字符是："+str.charAt(3));
+			console.info("e的位置是："+str.indexOf('e'));
+			console.info("从索引2开始截取5个字符串："+str.substr(2,5));
+			console.info("从索引2截取到索引5的字符串"+str.substring(2,5));
+			console.info("字符串转换为大写："+str.toUpperCase());
+			console.info("字符串长度为："+str.length);
+			
+			//2.数学
+			console.log("=========数学=========");
+			var num = 12.34;
+			console.info("[0,1)随机数："+Math.random());
+			console.info("12.34向上取整："+Math.ceil(num));
+			console.info("12.34向下取整："+Math.floor(num));
+			
+			//3.日期
+			console.log("=========日期==========")
+			var date = new Date();
+			console.info(date);
+			console.info(date.toLocaleString());	
+			console.info("返回当前月份-1："+date.getMonth());//得到的值：0~11（1 月~12 月）
+			date.setMonth(6);//7月        设置值时 0~11
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="input1" value="button1" />
+		<input type="text" id="input2" value="" />
+		<script type="text/javascript">
+			var input1 = document.getElementById('input1');
+			//onchange 用户改变域的内容 是在元素失去焦点之后检查
+			input1.onchange = function() {
+					input1.style.color = "cornflowerblue";
+			}
+			var input2 = document.getElementById('input2');
+			input2.onblur = function(){
+				input2.style.color = "mediumspringgreen";
+			}
+		</script>
+	</body>
+</html>
