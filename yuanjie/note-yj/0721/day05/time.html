@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				color: red;
+			}
+		</style>			
+	</head>
+
+	<body onload="init();" onload="init2();">
+		<div id="div1" >
+			
+		</div>
+		<div id="div2" align="center">
+			
+		</div>
+		<button onclick="stop();">停止时间</button>
+		<button onclick="stop2();">stop</button>
+		<script type="text/javascript">
+			/*时间函数 
+			1）setTimeout()
+			在指定的毫秒数后调用函数或计算表达式。
+			格式：
+			var id = setTimeout(function,times);
+			该方法只执行 code 一次。如果要多次调用，请使用 setInterval() 或者让 code 自身再次调用 setTimeout()。
+			clearTimeout()：
+			取消执行。
+			参数：setTimeout()返回的ID值。*/
+			
+
+			//提升id的作用域
+			var id;
+
+			function init() {
+				//获取当前时间
+				var time = new Date();
+				//拿到页面的div
+				var div = document.getElementById("div1");
+				//如果当前时间的秒数为零,则将字体变成红色,否则照常输出
+				if(time.getSeconds() == 0) {
+					div.innerHTML = "<span style='color: red'>" + time.toLocaleString() + "</span>";
+				} else {
+					div.innerHTML = "<span>" + time.toLocaleString() + "</span>";
+				}
+				//第一个参数是函数名,第二个参数是毫秒数
+				id = setTimeout(init, 1000);//递归
+			}
+			//终止init()的方法
+			function stop() {
+				//将setTimeout的id值传入,终止时间函数
+				clearTimeout(id);
+			}
+			
+			/*2）setInterval()
+			可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+			格式：
+			var id = setInterval(function,times);
+			该方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+			clearInterval():
+			取消执行。
+			参数：setInterval()返回的ID值。*/
+			
+			var id2;
+			function init2(){
+				var time = new Date();
+				var div2 = document.getElementById("div2");
+				if(time.getSeconds()==0){
+					div2.innerHTML = "<span style='color: red'>" + time.toLocaleString() + "</span>";
+				}else{
+					div2.innerHTML = "<span>"+time.toLocaleString()+"</span>";
+				}
+			}
+			id2 = setInterval(init2,2000);
+			function stop2(){
+				clearInterval(id2);
+			}
+		</script>
+	</body>
+
+</html>
