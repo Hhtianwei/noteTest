@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--节点种类:在HTML DOM中,每个部分都是节点:
+	文档本身是文档节点
+	所有HTML元素是元素节点
+	所有HTML属性是属性节点
+	HTML元素内的文本是文本节点
+	注释是注释节点-->
+		<!--window.onload=function(){//预加载HTML后执行}
+	getElementById()根据id获取dom对象
+	按照id取值,如果重复,那么以第一个为准
+	getElementsByTagName()根据标签名获取dom对象数组
+	getElementsByClassName()根据样式名获取dom对象数组
+	getElementsByName()根据名称获取dom对象数组,常用于多选获取值-->
+		<p id="p1" class="para">这是一个段落<span>文体</span></p>
+		<p id="p1" class="para">这又是一个段落</p>
+		<hr />
+		<input type="text" name="text" value="" />
+		<input type="checkbox" name="hobby" value="游泳" />游泳
+		<input type="checkbox" name="hobby" value="篮球" />篮球
+		<input type="checkbox" name="hobby" value="足球" />足球
+		<hr />
+		<a href="javascript:void(0);" onclick="testById();">按照id获取元素</a>
+		<a href="javascript:void(0);" onclick="testByName();">按照name获取元素</a>
+		<a href="javascript:void(0);" onclick="testByTagName();">按照标签名获取元素</a>
+		<a href="javascript:void(0);" onclick="testByClass();">按照class获取元素</a>
+
+	</body>
+	<script type="text/javascript">
+		function testById() {
+			var p = document.getElementById("p1");
+			console.log(p);
+			console.log(p.innerHTML);
+			console.log(p.innerText);
+		}
+
+		function testByName() {
+			var ho = document.getElementsByName("hobby");
+			console.log(ho);
+			for(var i = 0; i < ho.length - 1; i++) {
+				console.log(ho[i].value);
+			}
+		}
+
+		function testByTagName() {
+			//对象数组    
+			var inputArr = document.getElementsByTagName("input");
+			for(var i = 0; i < inputArr.length; i++) {
+				if(inputArr[i].type == "text") {
+					console.log("text 类型");
+				} else if(inputArr[i].type == "checkbox") {
+					if(inputArr[i].checked) {
+						console.log(inputArr[i].value);
+					}
+				}
+			}
+		}
+
+		function testByClass() {
+			//对象数组    
+			var ps = document.getElementsByClassName("para");
+			console.log(ps[0].innerHTML);
+			ps[0].innerHTML += "这是一段新的文本";
+		}
+	</script>
+
+</html>
