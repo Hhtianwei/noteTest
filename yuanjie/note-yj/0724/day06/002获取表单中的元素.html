@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="myform" method="get">
+			姓名：<input type="text" name="uname" id="" value="" onblur="getName();" />
+			<br />
+			密码：<input type="password" name="pwd" id="pwd" value="" />
+			<br />
+			<span id="">个人说明:</span>
+			<br />
+			<input type="hidden" name="hometown" id="hometown" value="Thailand" />
+			<textarea name="infor" rows="10" cols="10" onblur="getInfor();"></textarea>
+			<br />
+			<!--在表单中,button的默认type是submit , 如果要作为按钮使用 ,需要额外为button赋值-->
+			<button type="button" onclick="alert(document.getElementById('uname').value);">获取用户名</button>
+		</form>
+		<script type="text/javascript">
+				/*1)、通过 id 获取：document.getElementById(元素 id);
+				2)、通过 form.名称形式获取: 表单的name值.元素名称;
+				3)、通过 name 获取 :document.getElementsByName(元素名称)[索引] //从 0开始
+				4)、通过 tagName 数组 :document.getElementsByTagName('input')[索引] //从 0 开始*/
+			//1)、通过 id 获取：document.getElementById(元素 id);
+			function getName(){
+				var uname=document.getElementById("uname");
+				var value=uname.value;
+				console.log(value);
+			}
+			
+			//2)、通过 form.名称形式获取: 表单的name值.元素名称;
+			var pwd=myform.pwd;
+			//console.log(pwd.value);
+			
+			//3)、通过 name 获取 :document.getElementsByName(元素名称)[索引] //从 0开始
+			var uname =document.getElementsByName("uname")[0];
+			//alert(uname.value);
+			
+			//4)、通过 tagName 数组 :document.getElementsByTagName('input')[索引] //从 0 开始
+			function getInfor(){
+				var infor=document.getElementsByTagName("textarea")[0];
+				console.log(infor.value);
+			}
+			//通过 form.名称形式获取: 表单的name值.元素名称
+			console.log(myform.hometown.value);
+		</script>
+	</body>
+</html>

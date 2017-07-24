@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form method="get">
+			<select name="hero" id="mySelect">
+				<option value="貂蝉">貂蝉</option>
+				<option value="妲己">妲己</option>
+				<option value="王昭君">王昭君</option>
+			</select>			
+			<button type="button" onclick="getSelect();">确定</button>
+		</form>
+		<script type="text/javascript">
+			/*
+			 selected属性，值为布尔类型：
+			true：	selected='selected'、selected=true、selected
+			false：不设置该属性
+			（1）获取 select 对象：
+			var ufrom = document.getElementById("ufrom");
+			（2）获取选中项的索引：
+			var idx=ufrom.selectedIndex ;
+			（3）获取选中项 options 的 value属性值：
+			var val = ufrom.options[idx].value;
+			注意：当通过options获取选中项的value属性值时，
+				若没有value属性，则取option标签的内容
+				若存在value属性，则取value属性的值
+			（4）获取选中项 options 的 text：
+			var txt = ufrom.options[idx].text;
+			 * */
+
+			//编写getSelect()方法
+			function getSelect(){
+				//（1）获取 select 对象：
+				var sel = document.getElementById("mySelect");
+				//（2）获取选中项的索引：
+				var idx = sel.selectedIndex;
+				console.log("你选择的下标值为: "+ idx);
+				//（3）获取选中项 options 的 value属性值
+				var val = sel.options[idx].value;
+				console.log("你选择的英雄编号为 : "+ val);
+				//（4）获取选中项 options 的 text：
+				var txt = sel.options[idx].text;
+				console.log("你喜欢的英雄是 : "+ txt);
+			}
+		</script>
+	</body>
+</html>

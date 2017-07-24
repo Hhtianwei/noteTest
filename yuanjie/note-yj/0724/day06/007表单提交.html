@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="myform" method="get">
+			用户名:<input type="text" name="uname" id="uname" value="" /><br />
+			<!--<button type="button" onclick="mysubmit();">提交1</button>-->
+			<!--2 个return  都要写 -->
+			<!--<input type="submit" id="btn" onclick="return mysubmit2();" value="提交2" />-->
+			<input type="image" src="img/1.png" id="btn" onclick="return mysubmit3();" />
+		</form>
+		<script type="text/javascript">
+			/*
+			 1）使用普通button按钮+onclick事件+事件中编写代码:
+				 获取表单.submit();
+				
+			（2）使用input中type=submit按钮 + onclick="return 函数()" +函数编写代码: 
+				最后必须返回：return true---->提交表单
+				或:		 return	false---->不提交
+				
+			（3）使用submit按钮/图片提交按钮 + 表单onsubmit="return 函数();" +函数编写代码: 
+				最后必须返回：return true|false;
+
+			 * */
+			//1
+			function mysubmit(){
+				document.myform.submit();
+			}
+			
+			//2
+			function mysubmit2(){
+				//获取用户名节点
+				var uname=document.getElementById("uname");
+				//简单校验用户名 (uname.value.length>0)
+				if(uname.value){
+					return true;
+				}else{
+					alert("请填写!!!");
+					return false;
+				}
+			}
+			//3 image 图片
+			function mysubmit3(){
+				//获取用户名节点
+				var uname=document.getElementById("uname");
+				//简单校验用户名 (uname.value.length>0)
+				if(uname.value){
+					return true;
+				}else{
+					alert("请填写!!!");
+					return false;
+				}
+			}
+
+		</script>
+	</body>
+</html>

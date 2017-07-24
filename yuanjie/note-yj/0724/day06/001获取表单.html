@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1、document.表单名称
+			2、document.getElementById(表单 id);
+			3、document.forms[表单名称]
+			4、document.forms[索引]; //从 0 开始
+		-->
+		<form action="" id="form" name="myform">
+			姓名<input type="text" name="name" id="uname" value=""/>
+			<input type="submit" value="提交"/>
+		</form>
+		<script type="text/javascript">
+			//1.document.表单名称
+			var form = document.myform;
+			
+			//2.document.getElementById(表单 id)
+			var form = document.getElementById("form");
+			
+			//3.document.forms[表单名称]
+			var form = document.forms["myform"];
+			
+			//4.document.forms[索引];//从0开始
+			var form = document.forms[0];
+			console.log(form);
+		</script>
+	</body>
+</html>

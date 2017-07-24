@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				//获取全选checkbox项
+				var checkall = document.getElementById("all");
+				//对checkall元素绑定事件
+				checkall.onclick=function(){
+					//获取checkbox的选项元素数组
+					var items = document.getElementsByName("items");
+					//遍历
+					for(var i = 0;i < items.length;i++){
+						//这里的this指的是checkall元素的引用
+						if(this.checked){
+							items[i].checked=true;
+						}else{
+							items[i].checked=false;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form method="get">
+			<span id="">喜欢的音乐：</span>
+			<br />		
+			<input type="checkbox"  id="all" value="全选" />全选
+			<input type="checkbox" value="流行乐" name="items"/>流行乐
+			<input type="checkbox" value="古典乐" name="items"/>古典乐
+			<input type="checkbox" value="摇滚乐" name="items"/>摇滚乐
+			<input type="checkbox" value="爵士乐" name="items"/>爵士乐
+			<br />
+		</form>
+	</body>
+</html>
