@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!--要求：
+1、验证用户名
+	1)不能为空 
+	2)长度为 6-12 位 
+2、验证密码 
+	 1)不能为空 * 
+	 2)长度为 6-12 位 
+	 3)不能包含用户名 
+3、年龄: 必须选择 你懂得
+4、爱好: 必须选择一项
+5、来自: 必须选择一项 
+满足以上条件 1、弹出所有的内容 2、提交表单 
+否则 1、说明错误原因 2、不能提交表单
+ 
+-->
+
+	<body>
+		<form id="myform" name="myfrom">
+			姓名: <input type="text" name="uname" id="uname" value="" /><br /> 密码: <input type="password" name="upwd" id="upwd" /><br /> 青年类型:
+			<input type="radio" name="mytype" value="" /> 文青
+			<input type="radio" name="mytype" value="" /> 普通青年<br />爱好:
+			<input type="checkbox" name="ufav" value="" />篮球
+			<input type="checkbox" name="ufav" value="" />爬床
+			<input type="checkbox" name="ufav" value="" />代码<br />住址:
+			<select name="ufrom" id="ufrom">
+				<option value="-1" selected="selected">请选择</option>
+				<option value="0">上海</option>
+				<option value="1">北京</option>
+			</select>
+			<div id="validate" style=" color: red;">
+			</div>
+			<button type="submit" onclick="return checkForm();">提交</button>
+			<button type="reset" onclick="resetForm();">重置</button>
+		</form>
+		<script type="text/javascript">
+			function checkForm() {
+				//		获取校验信息显示的div
+				var validate = document.getElementById("validate");
+				validate.innerHTML = "";
+				var flag = true;
+
+				var uname = myfrom.uname.value;
+				if(uname.length = 0 || uname == "") {
+					validate.innerHTML += "用户名不可以为空";
+					flag = false;
+				}
+				if(uname.length < 6 || uname.length > 12) {
+					validate.innerHTML += "用户名长度为6~12位";
+					flag = false;
+				}
+				var upwd = myform.upwd.value;
+				if(upwd.length == 0 || upwd == "") {
+					validate.innerHTML += "密码不可以为空";
+					flag = false;
+				}
+				if(upwd.length < 6 || upwd.length > 12) {
+					validate.innerHTML += "密码长度为6~12位";
+					flag = false;
+				}
+				if(uname.length > 0 && upwd.indexOf(uname) >= 0) {
+					validate.innerHTML += "密码不能包含用户名";
+					flag = false;
+				}
+				var mytypes = document.getElementsByName("mytype");
+
+				for(var i = 0; i < mytypes.length; i++) {
+					if(mytypes[i].checked) {
+						if(mytypes[i].value == 1) {
+							validate.innerHTML += "请选择文青";
+							flag = false;
+						}
+					}
+				}
+				var sel = document.getElementById("ufrom");
+				if(sel.options[sel.selectedIndex].value == -1) {
+					validate.innerHTML += "至少选择一项地区<br/>";
+					flag = false;
+				} else {
+					var fromA = sel.options[sel.selectedIndex].text;
+				}
+				if(flag) {
+					var str = "";
+					str += "姓名：" + uname + "\n";
+					str += "密码：" + upwd + "\n";
+					str += "青年类型：" + mytypes + "\n";
+					//str += "爱好：" + ufav + "\n";
+					str += "来自：" + fromA + "\n";
+					alert(str)
+				}
+				return flag;
+			}
+		</script>
+
+	</body>
+
+</html>
