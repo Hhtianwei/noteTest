@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--层次选择器:
+		后代选择器      ancestor descendant
+		子代选择器	parent > child
+		相邻选择器	prev + next
+		同辈选择器	prev ~ sibling-->
+		<div id="parent">层次选择器
+			<div id="child" class="testColor">父选择器
+				<div class="gray">子选择器1</div>
+				<div class="gray">子选择器2</div>
+				<div class="gray">子选择器3</div>
+
+			</div>
+
+			<div>选择器2
+				<div>选择器2中的div</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		console.log("-------后代选择器--------");
+		var div1 = $('#parent .gray');
+		div1.each(function() {
+			console.log(this);
+		});
+		console.log("-------子代选择器--------");
+		var div2 = $('#parent > #child');
+		div2.each(function() {
+			console.log(this);
+		});
+		console.log("-------相邻选择器--------");
+		//相邻选择器	prev + next
+		var div3 = $('#child + div ');
+		div3.each(function() {
+			console.log(this);
+		});
+
+		console.log("-------同辈选择器--------");
+		//同辈选择器	prev ~ sibling
+		var div4 = $('.gray ~ div');
+		div4.each(function() {
+			console.log(this);
+		});
+	</script>
+
+</html>

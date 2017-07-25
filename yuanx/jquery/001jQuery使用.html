@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div id="div1" >
+			我是一个div
+		</div>
+		<script type="text/javascript">
+			/*	1 把jQuery.js文件,放入项目中
+				2在需要使用的页面引入
+				3开始编写
+			注意:
+			 	在页面使用Jquery时,如果有其他的js文件引入,需要将JQuery写在第一个*/
+			 	var div1=document.getElementById("div1");
+			 	console.log(div1)
+			 	console.log(div1.value);
+			 	
+			 	console.log("-----------");
+			 	var jqDiv=$('#div1');
+			 	console.log(jqDiv);
+			 	console.log(jqDiv.value);
+			 	
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body><pre>
+		<h5>1.attr()</h5>:设置或者返回元素的属性 ;
+		<h5>2.prop()</h5>:设置 具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled。
+		</pre>
+		<hr />
+		<a href="http://www.baidu.com" id="a1">百度</a>
+		<a href="http://www.bjsxt.com" id="a2">尚学堂</a>
+		<input type="checkbox" name="all" checked="checked" />全选
+		<input type="button" onclick="myclick();" value="点我" />
+		<input type="button" onclick="myclick2();" value="移除属性" />
+
+	</body>
+	<script type="text/javascript">
+		//attr() 拿属性值
+		var href1 = $('#a1').attr('herf');
+		console.log(href1);
+
+		//attr(属性名称,要设置的属性值)
+		$('#a1').attr('href', "http://www.shsxt.com");
+		var href2 = $('#a1').attr('href');
+		console.log("设置之后的值为:" + href2);
+		//prop() 设置 具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled。
+		/*$(':checkbox').prop(false);
+		console.log($(':checkbox').attr('checked'));*/
+		function myclick() {
+			$(':checkbox').prop('checked', false);
+		}
+
+		//、移除属性 （1）removeAttr(属性名)
+		function myclick2() {
+			$('#a2').removeAttr('href');
+		}
+	</script>
+
+</html>

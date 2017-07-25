@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="div1">小花</div>
+		<div id="div1">小华</div>
+		<div class="div1">晓华</div>
+		<div class="div1">肖华</div>
+		<p class="div1"> </p>
+		<p></p>
+		<!--jQuery选择器:$(选择器)
+			基础选择器:
+			id选择器:相同id的元素,只能取到第一个
+			类选择器
+			元素选择器
+			通用选择器
+			组合选择器-->
+		<script type="text/javascript">
+			console.log("------id选择器---");
+			var div1 = $('#div1');
+			div1.each(function() {
+				console.log(this); //相同id的元素,只能取到第一个
+			});
+			console.log("-----元素选择器------");
+			var p1 = $('p');
+			p1.each(function() {
+				console.log(this);
+			});
+			console.log("-----类选择器------");
+			var divs=$('.div1');
+			divs.each(function(){
+				console.log(this);
+			});
+			console.log("-----通用选择器------");
+			var all=$('*');
+			all.each(function(){
+				console.log(this);
+			});
+			console.log("-----组合选择器------");
+			var p2=$('p,.div1');
+			p2.each(function(){
+				console.log(this);
+			});
+		</script>
+	</body>
+
+</html>
