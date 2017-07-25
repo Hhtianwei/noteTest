@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div {
+			 margin: 10px 0px;
+			}
+			span{
+			 color: white;
+			 padding: 8px
+			}
+			.red{
+			 background-color: red;
+			}
+			.blue{
+			 background-color: blue;
+			}
+			.green{
+			 background-color: green;
+			}
+			</style>
+
+	</head>
+	<body>
+		<h3>prepend()方法前追加内容</h3>
+		<h3>prependTo()方法前追加内容</h3>
+		<h3>append()方法后追加内容</h3>
+		<h3>appendTo()方法后追加内容</h3>
+		<span class="red">男神</span>
+		<span class="blue">偶像</span>
+		<div class="green"><span >小鲜肉</span></div> 
+		<script type="text/javascript">
+			var str ="<span id='mydiv' style='padding: 8px;width:180px;background-color:#ADFF2F;'>动态创建 span</span>";
+
+			/*1、前加内容
+			（1）prepend(content)
+			在被选元素内部的开头插入元素或内容，被追加的 content 参数，可以是
+			字符、HTML 元素标记。
+			（2）$(content).prependTo(selector)
+			把 content 元素或内容加入 selector 元素开头*/
+			$('body').prepend(str);
+			$("<b>开头</b>").prependTo("body");
+			
+			/*2、后加内容
+			（1）append(content)
+			在被选元素内部的结尾插入元素或内容，被追加的 content 参数，可以是
+			字符、HTML 元素标记。
+			（2）$(content).appendTo(selector)
+			把 content 元素或内容插入 selector 元素内，默认是在尾部*/
+			$('body').append(str);
+			//$('div').append($('.red'));//当把已存在的元素添加到另一处的时候相当于移动
+			$("<b>结尾</b>").appendTo('body');
+//			$('.blue').appendTo($('div'));
+			
+		</script>
+	</body>
+</html>

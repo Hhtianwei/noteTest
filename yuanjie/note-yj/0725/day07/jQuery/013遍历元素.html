@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			span{
+			 color: white;
+			 padding: 8px;
+			 margin: 5px;
+			 float: left;
+			}
+			.green{
+			 background-color: green;
+			}
+			.blue{
+			 background-color: blue;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h3>遍历元素 each()</h3>
+		<span class="green">jquery</span>
+		<span class="green">javase</span>
+		<span class="green">http 协议</span>
+		<span class="green">servlet</span>
+		<script type="text/javascript">
+			/*each()
+			$(selector).each(function(index,element)) :遍历元素
+			参数 function 为遍历时的回调函数，
+			index 为遍历元素的序列号，从 0 开始。
+			element 是当前的元素。*/
+			$('.green').each(function(idx,ele){
+				console.log($(ele).text());
+			})
+		</script>
+		
+	</body>
+</html>

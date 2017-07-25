@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div{
+			    padding: 8px;
+			    width: 180px;
+			}
+			.blue{
+				background: blue;
+			}
+			.larger{
+				font-size: 30px;
+			}
+			.green {
+				background : green;
+			}
+			.red {
+				background : red;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h3>css()方法设置元素样式</h3>
+		<div id="conBlue" class="blue larger">天蓝色</div>
+        <div id="conRed">大红色</div>
+        <div id="remove" class="blue larger">天蓝色</div>
+		
+		<script type="text/javascript">
+			/*1、获取、修改样式
+			（1）attr(“class”)
+			获取样式名称
+			（2）attr(“class”,”样式名”)
+			修改样式注意：这个方法会将原有的样式覆盖*/
+			$('#conBlue').attr("class","green larger");
+			
+			/*2、增加样式
+			（1）addClass("样式名称  样式名称2...")
+			增加元素的样式名称，样式会叠加。
+			如：元素原有的class=”blue larger”，那么添加green样式名称后，class=”blue larger green”。
+			（2）css() 
+			增加元素的具体样式
+			格式：
+			1）css({‘样式名’:’样式值’,’样式名2’:’样式值2’})
+			例：css({"background-color":"red","color":"#fff"});
+			2）css(“样式名”,”样式值”)
+			例：css('color','white')*/
+			$('#conRed').addClass("red");
+			
+			/*3、删除样式
+			（1）removeClass(class)
+			删除元素的样式名称*/
+			$('#remove').removeClass("larger");
+		</script>
+	</body>
+</html>
