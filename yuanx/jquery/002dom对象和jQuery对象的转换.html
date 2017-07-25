@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="div1">我是小花</div>
+		<div id="div2">我是小华</div>
+		<div id="div3">我是晓华</div>
+	</body>
+	<script type="text/javascript">
+		//将dom对象-------->jQuery对象集
+		var jqDiv1 = $('#div1');
+		console.log(jqDiv1); //jQuery对象集
+
+		var jqDiv2 = $('#div2');
+		jqDiv2.each(function() {
+			console.log($(this)); //this是dom对象,$(this)是jQuery对象
+
+		});
+		//将Jquery对象集----->dom对象
+		var divDom = $('#div1')[0];
+		console.log("divDom----->" + divDom); //DOM对象
+		var jqDiv3 = $('#div1');
+		jqDiv3.each(function() {
+			console.log(this); //this 是DOM对象
+		});
+	</script>
+
+</html>

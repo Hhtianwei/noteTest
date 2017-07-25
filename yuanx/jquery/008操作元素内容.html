@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--1、html()
+		获取和设置元素的 HTML 内容
+		（1）html():获取 HTML 内容
+		（2）html("html 内容"):设置 HTML 内容
+		2、text()
+		获取和设置元素中的文本内容,不包含 HTML 格式代码
+		（1）text():获取 text 内容
+		（2）text("text 内容"):设置文本内容
+		3、val()
+		获取和设置表单元素的值
+		（1）val():获取表单元素的值
+		（2）val("值"):设置表单元素的值-->
+		<div id="div1">
+			<span id="span1">我是一个span</span>
+			<input type="button" id="input1" value="button" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myhtml = document.getElementById('div1');
+		console.log(myhtml.innerHTML);
+		console.log(myhtml.innerText);
+		var myinp = document.getElementById('input1');
+		console.log(myinp.value);
+		console.log("-----------");
+		/*获取和设置元素的 HTML 内容
+		（1）html():获取 HTML 内容
+		（2）html("html 内容"):设置 HTML 内容*/
+	/*	var myhtml1 = $('#div1');
+		console.log(myhtml1.html());
+		myhtml1.html("<span style='color: red;'>修改后的span</span>");
+		console.log("------------");*/
+		/*
+		 3、val()
+		获取和设置表单元素的值
+		（1）val():获取表单元素的值
+		（2）val("值"):设置表单元素的值
+		 * */
+
+		var myinp1 = $("#input1");
+		console.log(myinp1.val());
+		myinp1.val("按钮");
+		console.log(myinp1.val());
+	</script>
+
+</html>
