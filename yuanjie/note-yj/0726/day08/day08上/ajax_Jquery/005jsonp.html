@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 4.jsonp
+			远程跨域时，如果有两个域名，从其中一个域名去访问另一个域名时，使用普通的ajax方法是获取不到数据的，那么就可以使用jsonp方式发送请求。
+			添加属性：
+			jsonp:’callback’
+			dataType:’jsonp’
+
+			 * */
+		$(function(){
+			$.ajax({
+				//get请求
+				type:"get",
+				//url：请求地址url
+				url:"http://iservice.itshsxt.com/restaurant/find",
+				//async：是否异步，默认是true表示异步
+				async:true,
+				//dataType：预期服务器返回的数据类型
+				dataType:'jsonp',
+				jsonp:'callback',
+				data : {
+				searchKey:"Senator Saloon"
+				},
+				//success：请求成功时调用此函数
+				success:function(data,msg){
+					console.log(data);
+				},
+				//error：请求失败时调用此函数
+				error:function(errMsg,msg){
+					console.log(msg);
+				}
+			});
+		});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

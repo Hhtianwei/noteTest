@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--ng-app 整个页面只能写一次,写在<html>标签中,值与js文件中的module名称保持一致-->
+<html ng-app="myapp">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="module.js" type="text/javascript" charset="utf-8"></script>
+		<!--
+			使用angular的步骤:
+			1 将angular.js文件放在项目的js文件夹下
+			2 在页面引入,注意:如果有其他的js文件的引入,需要将angular.js放在第一个
+			3 在页面上绑定ng-app ,一般绑定在<html ng-app></html>标签中
+			4 新建一个js文件,在其中定义module,引入到当前页面,在module中定义controller
+			5将controller的名字通过ng-controller,绑定在页面的标签中
+			
+		-->
+	</head>
+	<body>
+		<div ng-controller="myCtl">
+			<p>{{name}}</p>
+		</div>
+		<div ng-controller="myCrl2">
+			<p>{{age}}</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js"></script>
+		<script type="text/javascript">
+			/*
+			1、ready()类似于 onLoad()事件 ，区别:
+				ready()只要页面的 DOM 结构加载后便触发
+				onLoad()必须在页面全部元素加载成功才触发
+				
+			2、ready()可以写多个，按顺序执行
+				
+			3、$(document).ready(function(){})等价于$(function(){})
+
+			 * */
+			//$(document).ready(function(){}); 
+			$(function(){
+				//document.getElementsByTagName('p').oncilck=function(){}
+				$('p').bind('click',function(){
+					$('p').each(function(){
+						$(this).hide();
+					});
+				});
+			});
+			//ready()可以写多个
+			$('input').ready(function(){
+				$('input').click(function(){
+					$('input').val("跺脚");
+				});
+			});
+			$('input').ready(function(){
+				$('input').mouseout(function(){
+					alert("鼠标走了.....");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>页面载入时触发ready()事件</h3>
+		<div></div>
+		<input id="btntest" type="button" value="剁手" />
+		<p>aaa</p>
+		<p>bbbb</p>
+		<p>ccc</p>
+		<p>dddd</p>
+	</body>
+</html>
