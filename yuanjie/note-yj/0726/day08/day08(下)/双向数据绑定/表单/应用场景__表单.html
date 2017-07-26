@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="应用场景_表单.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form ng-controller="myCtrl">
+			<input type="email" ng-model="email"/>
+			<input type="password" ng-model="password"/>
+			<!--ng-click绑定点击事件  如果是方法不要忘记()-->
+			<input type="button" ng-click="show()" />
+		</form>
+	</body>
+</html>
