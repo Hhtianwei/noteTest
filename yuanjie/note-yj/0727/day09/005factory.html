@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-controller="myCtrl">
+			{{name}},{{age}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myapp",[]);
+		/*
+		 * factory()函数可以接收两个参数：
+			 *  ①name（字符串）：需要注册的服务名称。
+				②function（函数）：这个函数在AngularJS创建服务实例时被调用，
+				此函数可以接收参数。
+		*/
+		app.factory('myFactory',function(){
+			//name没有写在return中,所以不能被外部访问
+			var name='';
+			//写在return中的东西外部(使用它的Controller)可以访问
+			return {
+				age:22,
+				setName:function(newName){
+					name=newName;
+				},
+				getName:function(){
+					return name;
+				}
+			}
+		});
+		//使用服务,注入的时候需要把自定义服务(myfactory)放到内置服务(带有$美元符)的后面
+		app.controller("myCtrl",function($scope,myFactory){
+			//name没有写在return中,所以不能被访问到
+			//$scope.name=myfactory.name;
+			myFactory.setName("迪丽热巴");
+			$scope.name=myFactory.getName();
+			$scope.age=myFactory.age;
+			console.log(myFactory.getName());
+		});
+	</script>
+</html>

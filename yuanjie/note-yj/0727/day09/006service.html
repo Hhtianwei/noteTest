@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-controller='myCtrl' style="color: deeppink;">
+			<div>{{name}}</div>
+			<div>{{age}}</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module('myapp',[]);
+		/*
+		 service()方法可以接收两个参数：
+			①name（字符串）：需要注册的服务名。
+			②constructor（函数）：构造函数，调用它来实例化服务对象，该构造函数可以接收参数
+			service()函数会在创建实例时自动通过new关键字来实例化服务对象。
+		 * */
+			/*
+		     //定义的另一种方式
+           var Person=function(){
+			this.userName="北京尚学堂"
+		};
+		serviceModule.service('service1',Person);
+		 * */
+		app.service('myService',function(){
+			var name='';
+			this.age=23;
+			this.setName=function(newName){
+				name=newName;
+			};
+			this.getName=function(){
+				return name;
+			}
+		});
+		app.controller('myCtrl',function($scope,myService){
+			//没this修饰的东西都访问不了
+			//$scope.name=myservice.name;
+			//修改name的值,因为name没有this修饰,所以要使用setName
+			myService.setName("王丽坤");
+			$scope.name=myService.getName();
+			$scope.age=myService.age;
+		});
+	</script>
+</html>
