@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="ngClass.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="ngClass.css"/>
+	</head>
+	<body ng-controller="myCtrl">
+		<div ng-class="{error:isErr,warning:isWarn}">
+			<div>{{message}}</div>
+		</div>
+		<button ng-click="show1()">errorMsg</button>
+		<button ng-click="show2()">WarningMsg</button>
+	</body>
+</html>
