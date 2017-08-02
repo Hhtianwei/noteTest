@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET","js/cuisine_area.json",true);
+			xhr.send(null);
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4){
+					alert(xhr.readyState);
+					if(xhr.status==200){
+						alert(xhr.responseText);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

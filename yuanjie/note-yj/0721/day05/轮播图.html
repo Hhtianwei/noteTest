@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 300px;
+				text-align: center;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<button onclick="start();">开始播放</button>
+			<button onclick="stop();">停止播放</button>
+			<img src="img/1.jpg" id="img1" height="100%" width="100%"/>
+		</div>
+		<script type="text/javascript">
+			var i = 1;
+
+			function show() {
+				i++;
+				document.getElementById("img1").src = "img/" + i + ".jpg";
+
+				if(i == 5) {
+					i = 1;
+			
+				}
+			}
+		
+		function start(){
+				 id = setInterval(show, 1000);
+		}
+			
+		
+			function stop(){
+				clearInterval(id);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" id='myform' name="myform" method="get">
+			姓名:<input type="text" id="uname" name="uname" /><br /> 
+			密码:<input type="password" id="upwd" name="upwd" /><br /> 
+			青年类型:
+			<input type="radio" name="type" value="0" />文青
+			<input type="radio" name="type" value="1" />普通青年 <br /> 
+			爱好:
+			<input type="checkbox" name="ufav" value="吃饭" />吃饭
+			<input type="checkbox" name="ufav" value="睡觉" />睡觉
+			<input type="checkbox" name="ufav" value="打dd" />打dd<br /> 
+			来自:
+			<select id="ufrom" name="ufrom">
+				<option value="-1" selected="selected">请选择</option>
+				<option value="0">北京</option>
+				<option value="1">上海</option>
+			</select><br />
+			<div id="validate" style="color: red;">
+			</div>
+			<button type="submit" onclick="return checkForm();" >提交</button>
+		</form>
+		<script type="text/javascript">
+			/*
+			要求：
+			1、验证用户名
+			  1)不能为空
+			  2)长度为 6-12 位
+			2、验证密码
+			  1)不能为空 *
+			  2)长度为 6-12 位
+			  3)不能包含用户名
+
+			*/
+			function checkForm(){
+				var flag = true;
+				//获取校验信息显示的div
+				var validate = document.getElementById("validate");
+				//先清空校验区域
+				validate.innerHTML="";
+				//获取用户名
+				var uname = document.getElementById("uname").value;
+				//用户名不能为空值
+				if(""==uname||0==uname.length){
+					validate.innerHTML+="用户名不能为空<br />";
+					flag = false;
+				//用户名长度为 6-12 位
+				}else if(uname.length<6||uname.length>12){
+					validate.innerHTML+="用户名长度为6-12位<br />";
+					flag = false;
+				}
+				
+				//获取密码
+				var upwd = document.getElementById("upwd").value;
+				//密码不能为空
+				if(upwd.length==0){
+					validate.innerHTML+="密码不能为空<br />";
+					flag = false;
+				//密码长度为 6-12 位
+				}else if(upwd.length<6||upwd.length>12){
+					validate.innerHTML+="密码长度为6-12位<br />";
+					flag = false;
+				//密码中不能包含用户名
+				}else if(uname.length>0&&(upwd.indexOf(uname)>=0)){
+					validate.innerHTML+="密码不能包含用户名<br />";
+					flag = false;
+				}
+				
+				
+				//获取青年类型
+				var mytypes = document.getElementsByName("type");
+				for(var i = 0;i < mytypes.length;i++){
+					if(mytypes[i].checked){
+						if(mytypes[i].value == 1){
+							validate.innerHTML+="请选择文青<br />";
+							flag = false;
+						}
+					}
+				}
+				
+				//获取爱好
+				var ufav = document.getElementsByName("ufav");
+				var checkStr = "";
+				for(var i = 0;i < ufav.length;i++){
+					if(ufav[i].checked){
+						checkStr += ufav[i].value+",";
+					}
+				}
+				if(checkStr.length==0){
+					validate.innerHTML+="请至少选择一个爱好<br />";
+					flag = false;
+				}
+				
+				//校验下拉框
+				var ufrom = document.getElementById("ufrom");
+				//拿到用户选择的下标
+				var idx = ufrom.selectedIndex;
+				//拿到下标对应的值
+				var val = ufrom.options[idx].value;
+				if(val==-1){
+					validate.innerHTML+="请至少选择一个地方<br />";
+					falg = false;
+				}
+				return flag;
+			}
+			
+		
+		</script>
+	</body>
+</html>

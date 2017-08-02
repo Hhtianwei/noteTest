@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+	<!--ng-app 告诉NG要使用Angularjs了,这是NG应用的主入口-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--
+			ng-model的作用：
+			将输入框的值赋值给data变量，生成一个属性data，其绑定在input框上，因此这个属性的取值就是input框中输入的任何值。
+		-->
+		<div ng-model="data">
+			<p>{{data}}</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 jquery调用ajax方法：
+			格式：$.ajax({});
+			参数：
+			type：请求方式 (get/post)
+			url：请求地址url
+			async：是否异步，默认是true表示异步
+			data：发送到服务器的数据
+			dataType：预期服务器返回的数据类型
+			contentType：设置请求头 若为post请求，需先模拟表单提交，再send，同时传递数据	
+			success：请求成功时调用此函数
+			error：请求失败时调用此函数
+			 * */
+		$(function(){
+			$.ajax({
+				//get请求
+				type:"get",
+				//url：请求地址url
+				url:"../../js/01.txt",
+				//async：是否异步，默认是true表示异步
+				async:true,
+				//dataType：预期服务器返回的数据类型
+				dataType:'text',
+				//success：请求成功时调用此函数
+				success:function(data,msg){
+					console.log(msg);
+				},
+				//error：请求失败时调用此函数
+				error:function(errMsg,msg){
+					console.log(msg);
+				}
+			});
+		});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

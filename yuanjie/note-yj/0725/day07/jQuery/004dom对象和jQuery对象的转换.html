@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="div1">div1</div>
+		<div id="div2">div2</div>
+		<div id="div2">div3</div>
+	</body>
+	<script type="text/javascript">
+		//将dom对象转换为jQuery对象集
+		//1
+		var jqDiv = $('#div1');
+		console.log(jqDiv);//jQuery对象
+		//2
+		var jqDiv2 = $('#div2');
+		jqDiv2.each(function(){
+			console.log($(this));//this是DOM对象，$(this)是jQuery对象
+		});
+		
+		//将jQuery对象集转换为dom对象
+		//1
+		var divDom = $('#div1')[0];
+		console.log('divDom--->'+divDom);//DOM对象
+		
+		//2
+		var jqDiv3 = $('#div1');
+		jqDiv3.each(function(){
+			console.log(this);//this是DOM对象
+		});
+	</script>
+</html>

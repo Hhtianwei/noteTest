@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、声明数组
+			var arr1 = [1,2,3];
+			var arr2 = new Array();
+			var arr3 = new Array(5);
+			
+			//获取数组长度
+			console.log("arr1的长度为："+arr1.length);
+			//JavaScript 数组的长度可以任意改变
+			arr1[3] = 4;
+			console.log("arr1的长度为："+arr1.length);
+			
+			//2、遍历数组
+			//在存放数据时，可以不按顺序存放
+			arr1[5] = 6;
+			//1.for(var i=0; i<=数组.length-1; i++){}
+			console.log('======for(var i=0; i<=数组.length-1; i++)=====')
+			for(var i = 0;i<arr1.length;i++){
+				console.log(i+"--->"+arr1[i]);
+			}
+			//2.for(var 下标(名称任意) in 数组名){ 数组名[下标]是获取元素}
+			console.log('======for(var 下标(名称任意) in 数组名)=====')
+			for(var i in arr1){
+				console.log(i+"--->"+arr1[i]);
+			}
+			//3.数组名.forEach(function(element,index){})
+			console.log('======数组名.forEach(function(element,index){})=====')
+			arr1.forEach(function(ele,index){
+				console.log(index+'--->'+ele);
+			})
+			
+		</script>
+	</body>
+</html>

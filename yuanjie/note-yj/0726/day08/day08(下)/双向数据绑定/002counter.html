@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--ng-init 初始化变量的值,用分号隔开-->
+		<table ng-init="cost=0;qty=0">
+			<tr>
+				<td>单价:<input type="number" ng-model="cost" /></td>
+			</tr>
+			<tr>
+				<td>数量:<input type="number"  ng-model="qty" /></td>
+			</tr>
+			<tr>
+				<td>金额:{{cost*qty}}</td>
+				<!--<td>金额:{{cost*qty|currency}}</td>-->
+				<!--{{250 | currency:”RMB ￥ ”}} 货币过滤器   结果：￥250.00-->
+			</tr>
+		</table>
+	</body>
+</html>

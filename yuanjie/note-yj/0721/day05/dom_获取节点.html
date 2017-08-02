@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--获取方式如下:
+		1)、getElementById() 据 id 获取 dom 对象
+		    按照id取值，如果重复，那么我们以第一个为准
+		2)、getElementsByTagName() 根据标签名获取 dom 对象数组
+		3)、getElementsByClassName() 根据样式名获取 dom 对象数组
+		4)、getElementsByName() 根据名称获取 dom 对象数组，常用于多选获取值
+		-->
+		<p id="p1">张二狗该洗澡了</p>
+		<p id="p1">二狗子</p>
+		
+		<input type="text" name="input"  value="" /><br />
+		<input type="text" name="input"  value="" /><br />
+		
+		<input type="text" class="input"  value="001" /><br />
+		<input type="text" class="input" value="002" /><br />
+		
+		<button onclick="getEle();">根据ID获取</button><br />
+		<button onclick="byName();">根据NAME获取</button><br />
+		<button onclick="byClass();">根据CLASS名获取</button><br />
+		<script type="text/javascript">
+			//1)、getElementById() 据 id 获取 dom 对象
+			function getEle(){
+				var p = document.getElementById("p1");
+				console.log(p);
+			}
+			//4)、getElementsByName() 根据名称获取 dom 对象数组，常用于多选获取值
+			function byName(){
+				var inputArr = document.getElementsByName("input");
+				console.log(inputArr);
+				console.log(inputArr[0].value);
+			}
+			//3) getElementsByClassName 根据样式名获取 dom 对象数组
+			function byClass(){
+				var inputArr = document.getElementsByClassName("input");
+				console.log(inputArr);
+			}
+		</script>
+	</body>
+</html>

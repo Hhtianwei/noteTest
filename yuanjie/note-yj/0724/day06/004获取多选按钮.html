@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form method="get">
+			<span id="">喜欢的音乐：</span>
+			<br />			
+			<input type="checkbox" value="流行乐" name="items"/>流行乐
+			<input type="checkbox" value="古典乐" name="items"/>古典乐
+			<input type="checkbox" value="摇滚乐" name="items"/>摇滚乐
+			<input type="checkbox" value="爵士乐" name="items"/>爵士乐
+			<br />
+			<button type="button" onclick="getMusic();">提交</button>
+		</form>
+		<script type="text/javascript">
+			function getMusic(){
+				var items = document.getElementsByName("items");
+				var str = "";
+				for(var i = 0;i < items.length;i++){
+					if(items[i].checked){
+						//将选项拼接成string
+						str += items[i].value+",";
+					}
+				}
+				//对字符串进行处理,去掉最后一个逗号
+				str = str.substr(0,str.length-1);
+				console.log(str);
+			}
+		</script>
+	</body>
+</html>

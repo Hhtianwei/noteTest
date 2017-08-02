@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<span id="span1">我是一个span</span>
+			<input type="button" id="input1" value="button" />
+		</div>
+
+		<script type="text/javascript">
+			/*1、html()
+			获取和设置元素的 HTML 内容
+			（1）html():获取 HTML 内容
+			（2）html("html 内容"):设置 HTML 内容*/
+//			var myhtml1 = $("#div1");
+//			console.log(myhtml1.html());
+//			myhtml1.html("<span style='color: red;'>修改后的span</span>")
+//			console.log(myhtml1.html());
+			
+			/*2、text()
+			获取和设置元素中的文本内容,不包含 HTML 格式代码
+			（1）text():获取 text 内容
+			（2）text("text 内容"):设置文本内容*/
+//			$("#div1").text("text");
+
+			/*3、val()
+			获取和设置表单元素的值
+			（1）val():获取表单元素的值
+			（2）val("值"):设置表单元素的值*/
+			var val = $('#input1');
+			console.log(val.val());
+			val.val("按钮");
+
+		</script>
+	</body>
+</html>

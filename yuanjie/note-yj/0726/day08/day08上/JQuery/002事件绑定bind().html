@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.myfont_color{
+				color:lightcoral;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){//简便写法$(function(){...});
+			/*
+				 bind()绑定事件,与js中的事件一一对应
+			 	1 $(选择器).bind('事件名称',事件触发后执行的匿名函数);
+			 	2 $(选择器).事件名称(事件触发后执行的匿名函数);
+			 * */	
+			 	//1 $(选择器).bind('事件名称',事件触发后执行的匿名函数);
+				 $('p').bind('click',function(){
+				 	$('p').attr('class','myfont_color');
+				 });
+				//2 $(选择器).事件名称(事件触发后执行的匿名函数);
+				/*$('div').mouseenter(function(){
+					$('div').text("high起来~~~");
+				});
+				$('div').mouseout(function(){
+					$('div').text("他大姨妈~~~");
+				});
+				*/
+				//绑定多个事件
+				$('div').mouseenter(function(){
+					$('div').text("high起来~~~");
+				}).mouseout(function(){
+					$('div').text("他大姨妈~~~");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>bind()事件</h3>
+		<div>我是一个div</div>
+		<input id="btntest" type="button" value="剁手" />
+		<p>aaa</p>
+		<p>bbbb</p>
+		<p>ccc</p>
+		<p>dddd</p>
+	</body>
+</html>

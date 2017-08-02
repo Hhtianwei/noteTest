@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//布尔型、字符串、数字的转化
+			var a = true;
+			var b = "888" + a;
+			var c = 99 + a;
+			document.write(b + "<br />");
+			document.write(c + "<br />");
+			//字符串和数字转化
+			var d = 33;
+			var e = "44";
+			var f = d + e;
+			var g = 3 * "4";
+			document.write(f + "<br />");
+			document.write(g + "<br />");
+			//null、布尔型、字符串、数字的转化 
+			var h = null;
+			var h2 = h + 3;
+			document.write(h2 + "<br>");
+			var h3 = "aa" + h;
+			document.write(h3 + "<br>");
+			if(!h) {
+				alert("h 自动转化为 boolean 值：false！");
+			}
+		</script>
+	</body>
+
+</html>

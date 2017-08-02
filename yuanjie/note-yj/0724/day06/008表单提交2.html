@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			3）使用submit按钮/图片提交按钮 + 表单onsubmit="return 函数();" +函数编写代码: 
+				最后必须返回：return true|false;
+		-->
+		<form name="myform" method="get" onsubmit="return mysubmit3();">
+			<input type="text" id="username" name="username" />
+			<span id="msg"></span>
+			<button>提交</button>
+		</form>
+		<script type="text/javascript">
+			function mysubmit3(){
+				if(myform.username.value==""){
+					document.getElementById("msg").innerHTML='error';
+					document.getElementById("msg").style.color="red";
+					return false;
+				}else{
+					document.getElementById("msg").innerHTML='';
+					return true;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form method="get">
+			<span id="">是否喜欢香菜:</span>
+			<br />
+			<input type="radio" name="faver" id="faver1" value="喜欢" />喜欢
+			
+			<input type="radio" name="faver" id="faver2" value="不喜欢" />不喜欢
+			<br />
+			<button type="button" onclick="getFaver();">确定</button>
+		</form>
+		<script type="text/javascript">
+			/*
+			 * JS:
+			 	true：
+					checked = "checked"
+					checked = true
+				false：
+					checked = false
+			 * */
+			function getFaver(){
+				var favers = document.getElementsByName("faver");
+				//遍历
+				for(var i = 0;i < favers.length;i++){
+					//判断选项是否被选中了
+					if(favers[i].checked){
+						//输出选中项的value值
+						console.log(favers[i].value);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

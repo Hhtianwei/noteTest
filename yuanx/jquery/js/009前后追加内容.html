@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--
+			（1）prepend(content)
+			在被选元素内部的开头插入元素或内容，被追加的 content 参数，可以是字符、HTML 元素标记。
+			（2）$(content).prependTo(selector)
+			把 content 元素或内容加入 selector 元素开头
+			2、后加内容
+			（1）append(content)
+			在被选元素内部的结尾插入元素或内容，被追加的 content 参数，可以是字符、HTML 元素标记。
+			（2）$(content).appendTo(selector)
+			把 content 元素或内容插入 selector 元素内，默认是在尾部
+		-->
+		<div id="div1">
+			<div id="">我是一个div</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		//（1）prepend(content) 在被选元素内部的开头插入元素或内容
+		$('#div1').prepend("<span>我是追加的span</span>");
+		//2
+		$("<span>我是第二个追加的span</span><br/>").prependTo($('#div1'));
+	</script>
+
+</html>

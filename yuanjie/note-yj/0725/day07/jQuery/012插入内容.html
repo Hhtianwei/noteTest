@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			span{
+			 color: white;
+			 padding: 8px
+			}
+			.red{
+			 background-color: red;
+			}
+			.blue{
+			 background-color: blue;
+			}
+			.green{
+			 background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>before() 和 after()方法在元素之前后插入内容</h3>
+ 		<span class="green">财大气粗</span>
+
+		<script type="text/javascript">
+			/*在兄弟节点上操作
+			1、before()
+			在元素前插入指定的元素或内容:$(selector).before(content)
+			2、after()
+			在元素后插入指定的元素或内容:$(selector).after(content)*/
+			//1.
+			$('.green').before("<span class='red'>土豪</span>");
+			$('.green').after("<span class='blue larger'>都变大了</span>");
+		</script>
+	</body>
+</html>
