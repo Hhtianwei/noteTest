@@ -26,4 +26,4 @@ session不像cookie拥有路径访问的问题
 同一个application下的servlet/jsp可以共享同一个session,前提是同一个客户端窗口
 Session.getLastAccessedTime();
 Request.getSession(true);如果存在session则拿到session不存在则新建
-cookie以"名-值"对的形式保存数据
+cookie以"名-值"对的形式保存数据.
