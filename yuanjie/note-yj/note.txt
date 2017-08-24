@@ -1,0 +1,14 @@
+1.设置MySQL自动增长从某个指定的数开始
+alter table Test auto_increment=1000;
+
+2.分页：第一个参数指定第一个返回记录行的偏移量(从第几个开始)，第二个参数指定返回记录行的最大数目(显示多少条数据)。初始记录行的偏移量是 0(而不是 1)
+SELECT * FROM table LIMIT 5,10;  // 检索记录行 6-15
+
+3.求一个m-n的随机整数
+(int)(Math.random()*(n-m+1))+m
+
+4.date
+数据库里时间类型用   datetime
+java里的字段类型是   java.util.Date()
+在保存时间字段的时候 使用   
+prestatement.setTimestamp(2, new Timestamp(s.getBirthday().getTime()));
